@@ -1,0 +1,60 @@
+\subsection{Beschreibung Programmaufbau}
+\label{kap:ClientGraphCode}
+In diesem Kapitel wird zu jeder Funktion (z.B. das Starten einer Messung) die dahinter liegenden Programm-Elemente aufgezeigt und erläutert. Triviale Funktionalitäten, wie z.B. das Löschen eines Textfeldes, werden dabei außer Acht gelassen.
+
+Die Elemente werden dabei mit der in der HMI angegebenen Bezeichnung beschrieben.
+
+\begin{enumerate}
+	%
+	% Record to db
+	%
+	\item \textbf{Record to db}\\
+	Das Starten einer Messwertaufnahme erfolgt durch das Betätigen des Buttons \textit{Record to db}. In der dazugehörigen Event-Routine (s. Listing \ref{lst:recordToDb} Zeile 1-19) erfolgt zunächst eine Abfrage der Button-Beschriftung (Zeile 3), da nur ein Element zum Stoppen / Starten einer Messwertaufnahme genutzt wird. In dieser Abfrage wird ein Dialog eingeblendet, der das Löschen des bisherigen Datenbankinhaltes veranlasst (Zeile 5-9). \\
+	Das Löschen der Datenbank erfolgt innerhalb eines Background-Tasks (s. Zeile 23-32). Hierbei wird in Zeile 26 und 27 die Datenbank 1 und 2 mit den entsprechenden Connectionstrings gelöscht. In Zeile 28 und 29 erfolgt das Erstellen der neuen Datensätze für Datenbank 1 und 2. Zeile 30 gibt den Datensatz 1 an die Routine \textit{x\_RunWOrkerCompleted()} weiter. In dieser Routine wird die boolsche Variable \textit{recordIsActive} gesetzt, sodass in der Event-Routine \textit{tcpMsgRecEvent()}, die beim Eintreffen eines Messwerts aufgerufen wird, Werte in die Datenbank geschrieben werden können. Sobald die Variable wieder zurückgesetzt ist, erfolgt kein weiteres Schreiben in die Datenbank.
+	\input{02_Inhalt/Messsystem/Listings/recordToDb}
+	%
+	% Export db to txt
+	%
+	\item \textbf{Export db to txt file}\\
+	Das Exportieren der gespeicherten Messwerte (Formatierung: CSV-Datei, Trennzeichen: Semikolon) erfolgt durch das Betätigen des Buttons \textit{Export db to txt}. In der dazugehörigen Event-Routine wird dazu ein Background-Task gestartet \ref{lst:exportDb} Zeile 1-16). In dieser Routine wird zunächst die maximale Zeilenanzahl, sowie die Überschrift für das Textdokument gesetzt.\\
+	In Zeile 7-15 erfolgt das Schreiben der Daten in eine Textdatei. Diesbezüglich wird für jeden Sensor eine seperate Datei mit spezifischen DAteinamen erstellt. Das Setzen des Dateinamens erfolgt im Textfeld \textit{Context} innerhalb der Main-Gui. Wird kein Name angegeben, so tragen die Dateien die Bezeichnung \textit{noname\_x.txt}. \\
+	Da während des Schreibvorgangs alle Buttons deaktiviert werden, erfolgt in der Routine \textit{...RunWorkerCompleted()} das Re-Aktivieren der entsprechenden Elemente.
+	\input{02_Inhalt/Messsystem/Listings/exportDb}
+	%
+	% Import extracted steps
+	%
+	\item \textbf{Import extracted steps to db}\\
+	Pseudotext\\
+	!!! TODO: VALIDATE CODE AND WRITE DESCRIPTION !!! \\
+	\input{02_Inhalt/Messsystem/Listings/importSteps}
+	%
+	% Calibrate Sensors
+	%
+	\item \textbf{Calibrate Sensors}\\
+	Das Starten der Kalibrierung erfolgt durch das Betätigen des Buttons \textit{Calibrate Sensors}. In der dazugehörigen Event-Routine (s. Listing \ref{lst:calibrateSensor} Zeile 1-9) werden zunächst die Kalibrierwerte (Zeile 5), sowie der Merker, für das Durchführen einer Kalibrierung (Zeile 6), zurückgesetzt.\\
+	In Zeile 8 wird der Button deaktiviert und erst wieder aktiviert wenn die Kalibrierung abgeschlossen ist.\\
+	Das Ausführen der Kalibrierung erfolgt in der Event-Routine \textit{tcpMsgRecEvent()} (Zeile 11-52), die beim Eintreffen eines Messwerts ausgeführt wird. Ist der Button \textit{Calibrate Sensors} deaktiviert und der Merker für die durchgeführte Kalibrierung \textit{sensorCalibrationSet[]} gesetzt erfolgt das Kalibrieren in den Zeilen 18-36. Dabei wird zu Beginn in den Zeilen 18-20 der Quadrant geprüft, in dem sich das \gls{KS} des Sensors befindet. Demnach erfolgt ein Abbruch, wenn ein Sensor sich nicht innerhalb der zulässigen Quadranten (s. Abbildung \ref{fig:ZulQuadranten}) befindet.
+	
+	\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{03_Grafiken/Messsystem/Quadranten}
+	\caption[Zulässige Quadranten]{Zulässige Quadranten}
+	\label{fig:ZulQuadranten}
+	\end{figure}
+
+	\input{02_Inhalt/Messsystem/Listings/calibrateSensor}
+	%
+	% Show graph
+	%
+	\item \textbf{Show graph}\\
+	Das Visualisieren der Messwerte erfolgt innerhalb eines Hintergrund-Tasks. Diesbezüglich wird der Graph aktualisiert, sobald ein neuer Messwert empfangen wurde. Beim Empfangen eines Messwerts erfolgt der Aufruf der Event-Routine \textit{tcpMsgRecEvent()} (s. Listing \ref{lst:showGraph} Zeile 1-4). Innerhalb dieser Routine wird geprüft, ob die Checkbox zum Anzeigen der Visualisierung gesetzt und ob die Windows Form bereits deklariert ist. Ist dies der Fall, so erfolgt die Übergabe aller Messwerte, sowie der Sensor-ID an die Routine \textit{setNewChartData()} (s. Zeile 3).\\
+	In dieser Routine wird zunächst geprüft, ob die ausgewählte ID (mit dem Up- Down-Selector) mit der übertragenen Sensor-ID übereinstimmt. Ist dies der Fall so erfolgt das Setzen eines Events \textit{chartData()} (s. Zeile 8). In der Event-Routine \textit{OnChartEvent()} wird zunächst geprüft, ob die darzustellenden Daten bereits in dem Daten-Array vorhanden sind (Prüfen gegen Vorinitialisierung -9999). Ist dies der Fall so wird die Routine \textit{setDataToGraph()} aufgerufen (Übergabewert: Sensordaten). In dieser Routine ist das Visualisieren der Messwerte implementiert (s. Zeile 16-24). Dargestellt ist der Code für das Setzen der Sensorwerte auf die X-Achse. Zeile 18-19 zeigt das Setzen der Achsbeschriftung und Zeile 21-22 zeigt das Setzen eines Messpunkts.
+	\input{02_Inhalt/Messsystem/Listings/showGraph}
+	%
+	% Show database
+	%
+	\item \textbf{Show database}\\
+	Das Darstellen der Datenbank, indem sich die aufgezeichneten Messwerte befinden, erfolgt durch das Setzen der entsprechenden Checkbox. Das Prüfen, ob die Checkbox gesetzt ist erfolgt inerhalb der verbundenen Event-Routine (s. Listing \ref{lst:showDb} Zeile 7). Entsprechend der gesetzten Datenbank-ID wird die Datenbank ausgewählt und eine Liste mit dessen Inhalt erzeugt (s. Zeile 21) und dargestellt (s. Zeile 22).
+	\input{02_Inhalt/Messsystem/Listings/showDb}
+\end{enumerate}
+

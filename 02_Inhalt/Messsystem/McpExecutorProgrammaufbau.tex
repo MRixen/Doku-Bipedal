@@ -1,0 +1,23 @@
+\subsection{Programmaufbau}
+\label{kap:McpExecutorProgrammaufbau}
+\begin{enumerate}
+	%
+	% Setup-Routine
+	%
+	\item \textbf{Setup-Routine}\\
+	% LISTING FÜR SETUP() 
+	Das Programm, welches auf der \gls{MCU} einer Einheit aktiv ist besteht aus einer Setup- und einer Loop-Routine. Innerhalb des Setups efolgt die Definition verschiedener Variablen und die Konfiguration der SPI-Schnisttstelle, sowie der Komponenten Adxl345 und Mcp2515 (s. Listing \ref{lst:mcpExecutorSetup}).
+	In den Zeilen 4-6 und 8-10 werden die Ausgänge zum Auswählen der Geräte, entsprechend der SPI-Schnittstelle, gesetzt. Dabei ist zu beachten, dass bei der Atmega-\gls{MCU} der Ausgang an Pin 10 immer immer gesetzt werden muss, auch wenn ein anderer Pin als Device-Selector verwendet wird. Der SIgnalzustand der Pins muss HIGH entsprechen, da bei einem Low-Pegel das entsprechende Gerät ausgewählt wird.\\
+	Zeile 12-13 initialisiert die SPI-Schnittstelle mit 5 Mhz und dem SPI-Mode 3 (CPOL = 1, CPHA = 1). Diese einzig verfügbare Einstellung richtet sich nach dem Beschleunigungssensor Adxl345. Mit dem Aufruf der Routine SPI.begin() beginnt die Verwendung der Schnittstelle, sodass in den Zeilen 15-16 die Initialisierungsdaten an die Geräte gesendet werden können. Diese beinhalten für den Sensor Adxl345 u.A. das Datenformat und für den Mcp2515 das CAN-Bus Setup. Für das CAN-Bus Setup ist zu beachten, dass die Nachrichten jedes Teilnehmers einen spzifischen Identifier aufweisen muss.\\
+	\input{02_Inhalt/Messsystem/Listings/mcpExecutorSetup}
+	%
+	% Loop-Routine
+	%
+	\item \textbf{Loop-Routine}\\
+	In der Loop-Routine (s. Listing \ref{lst:mcpExecutorLoop}) werden zwei Methoden aufgerufen, von denen die Prozedur \textit{getAdxlData()} die Sensordaten ließt und zusammen mit einem Zeitstempel in ein Array speichert.
+	Die Routine \textit{mcp2515\_load\_tx\_buffer()} schreibt die Daten nacheinander in die Sende-Buffer 1-3.\\
+	Innerhalb der Routine \textit{getAdxlData()} erfolgt in Zeile 10 das Setzen der entsprechenden Registerwerte, um die Sensordaten auslesen zu können. In den Zeilen 12-15 erfolgt das Auslesen, indem der Selektor-Pin auf Low-Level gelegt wird. Anschließend erfolgt das Senden von 0-Werten, um per SPI die Sensordaten auszulesen (für jede Achse zwei Byte). In Zeile 17 wird noch die ID für das Gerät angegeben.\\
+	Innerhalb der Routine mcp2515\_load\_tx\_buffer0() erfolgt in den Zeilen 25-47 das Setzen der Registeradresse eines Sendebuffers, in Abhängigkeit welcher zuletzt genutzt wurde. In Zeile 51 werden in den ausgewählten Sendebuffer die Sensordaten gelegt und mit dem in Zeile 53 angegebenen Kommando auf den CAN-Bus geschickt.
+	\input{02_Inhalt/Messsystem/Listings/mcpExecutorLoop}
+
+\end{enumerate}

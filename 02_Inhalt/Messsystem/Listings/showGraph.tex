@@ -1,0 +1,27 @@
+\label{lst:showGraph}
+\begin{lstlisting}[language=Java, caption=Visualisierung anzeigen]
+private void tcpMsgRecEvent(string[] receivedMessage)
+{
+	if ((checkBox_showGraphs.Checked) && (formCharts != null)) formCharts.setNewChartData(messageDataAsDecimal, sensor_joint_ID);
+}
+
+public void setNewChartData(Decimal[] message, int currentSensorID)
+{
+    if (sensorIdToShow == currentSensorID) this.chartData = message;
+}
+
+private void OnChartEvent(object sender, EventArgs e)
+{
+	if ((chartData[0] != -9999) && (chartData[1] != -9999) && (chartData[2] != -9999) && (chartData[3] != -9999)) setDataToGraph(chartData); dataCounter++;
+}
+
+private void setDataToGraph(Decimal[] chartData)
+{
+	chartX.ChartAreas[0].AxisX.Title = "Timestamp [ms]";
+	chartX.ChartAreas[0].AxisY.Title = "Angle " + chartXaxisLabel[0] + " [deg]";	
+	...	
+	chartSeries[0].Points.AddXY(chartData[3], chartData[0]);
+	chartX.Invalidate();
+	...	
+}
+\end{lstlisting}

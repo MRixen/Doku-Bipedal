@@ -1,0 +1,29 @@
+\label{lst:showDb}
+\begin{lstlisting}[language=Java, caption=Datenbank anzeigen]
+private void checkBox_showDatabase_CheckedChanged(object sender, EventArgs e)
+{
+	...
+	DataSet dataSetTemp = new DataSet();
+	int databaseId = Int32.Parse(textBox_dataBaseId.Text);
+	
+	if (((CheckBox)sender).Checked)
+	{
+		switch (databaseId)
+		{
+			case 1:
+			dataSetTemp = dataSet_Db1;
+			break;
+			case 2:
+			dataSetTemp = dataSet_Db2;
+			break;
+			default:
+			dataSetTemp = dataSet_Db1;
+			break;
+		}
+		dataBaseList = new DatabaseList(this, dataSetTemp, databaseConnection, databaseId);
+		dataBaseList.Show();
+	}
+	else try dataBaseList.Close();
+	...
+}
+\end{lstlisting}

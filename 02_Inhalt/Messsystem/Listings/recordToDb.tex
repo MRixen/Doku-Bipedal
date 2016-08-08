@@ -1,0 +1,40 @@
+\label{lst:recordToDb}
+\begin{lstlisting}[language=Java, caption=Messwertaufnahme starten]
+private void recordToDb_Click(object sender, EventArgs e)
+{
+	if (button_recordToDb.Text.Equals("Record to db"))
+	{
+		if (MessageBox.Show("Delete database content?", "Database re-initialization", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+		{
+			labelSavedRows.Text = "";
+			backgroundWorker_DeleteDb.RunWorkerAsync();
+		}
+		else ; // Do nothing
+	}
+	else
+	{
+		...
+		recordIsActive = false;
+		savedRowCounter = 0;
+		...
+	}
+}
+...
+private void backgroundWorker_DeleteDb_DoWork(object sender, DoWorkEventArgs e)
+{
+	...
+	databaseConnection.deleteDatabaseContent(ConnectionString_DB1);
+	databaseConnection.deleteDatabaseContent(ConnectionString_DB2);
+	dataSet_Db1 = databaseConnection.createDatasetsForDb(ConnectionString_DB1);
+	dataSet_Db2 = databaseConnection.createDatasetsForDb(ConnectionString_DB2);
+	e.Result = databaseConnection.getTableSizeForDb(dataSet_Db1);
+	...
+}
+...
+private void backgroundWorker_DeleteDb_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+{
+	...
+	recordIsActive = true;
+	maxTableRows_Db1 = (int[])e.Result;
+}
+\end{lstlisting}

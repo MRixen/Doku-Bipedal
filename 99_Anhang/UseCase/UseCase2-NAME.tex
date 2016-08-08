@@ -1,0 +1,40 @@
+\begin{table}[H]
+\caption{Ablauf: NAME}\label{app:UseCaseNAME1}
+\renewcommand{\arraystretch}{1.5} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\centering
+\begin{tabular}{|p{1.5cm}|p{1.5cm}|p{9cm}|}
+ 	\hline 
+    \multicolumn{2}{|l|}{\cellcolor{hellgrau}\textbf{Name}} & Verbindung einrichten \\     
+    \hline
+    \multicolumn{2}{|l|}{\cellcolor{hellgrau}\textbf{Ziel}} & Verbindung zum Roboter aufbauen \\
+    \hline
+    \multicolumn{2}{|l|}{\cellcolor{hellgrau}\textbf{Akteure}} & Bediener \\   
+    \hline
+    \multicolumn{2}{|l|}{\cellcolor{hellgrau}\textbf{Trigger}} & Starten der Anwendung FloriBot HMI \\   
+    \hline
+    \multicolumn{2}{|l|}{\cellcolor{hellgrau}\textbf{Vorbedingung}} & Flugmodus ist aktiv \\   
+    \specialrule{2pt}{0pt}{0pt} 
+    \rowcolor{hellgrau} \textbf{Schritt} & \textbf{Akteur} & \textbf{Ablauf} \\
+    \hline
+    1. & Person & Eingabe der Master-Adresse \\
+    \hline
+    2. & Person & Eingabe des Publisher-Topics \\
+    \hline
+    3. & Person & Eingabe des Subscriber-Topics \\
+    \hline
+    4. & Person & Eingabe des Node Namens im Optionsmenü \\
+    \hline
+    5. & Person & Setzen des Themes im Optionsmenü \\
+    \hline
+    6. & Person & Betätigen der Verbindungstaste zum Starten des Verbindungsaufbaus \\
+	\hline 
+	\rowcolor{hellgrau} & & \textbf{Erweiterung} \\
+	7.a &  & Kein Verbindungsaufbau möglich, wenn Flugmodus deaktiviert. Ein Hinweis wird ausgegeben. \\
+    \hline
+    7.b &  & Kein Verbindungsaufbau möglich, wenn nicht alle Eingabefelder ausgefüllt sind. Ein Hinweis wird ausgegeben. \\
+    \hline
+    7.c &  & Kein Verbindungsaufbau möglich, wenn Wlan-Schnittstelle deaktiviert ist. Ein Hinweis wird ausgegeben. \\
+	\hline 
+\end{tabular} 
+\end{table}

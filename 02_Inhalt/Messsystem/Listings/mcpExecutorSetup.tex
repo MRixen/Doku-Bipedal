@@ -1,0 +1,20 @@
+\label{lst:mcpExecutorSetup}
+\begin{lstlisting}[language=Java, caption=Setup Routine]
+void setup()
+{
+...
+pinMode(CS_PIN_ADXL, OUTPUT);
+pinMode(CS_PIN_MCP2515, OUTPUT);
+pinMode(10, OUTPUT);
+
+digitalWrite(CS_PIN_ADXL, HIGH);
+digitalWrite(CS_PIN_MCP2515, HIGH);
+digitalWrite(10, HIGH);
+
+SPI.beginTransaction(SPISettings(5000000, MSBFIRST, SPI_MODE3));
+SPI.begin();
+
+initAdxl();
+initMcp2515();
+}
+\end{lstlisting}

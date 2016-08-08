@@ -1,0 +1,26 @@
+\label{lst:exportDb}
+\begin{lstlisting}[language=Java, caption=Datenbank exportieren]
+private void backgroundWorker_saveDbToTxt_DoWork(object sender, DoWorkEventArgs e)
+{
+	...
+	int[] maxTableRows = databaseConnection.getTableSizeForDb(dataSet_Db1);
+	string header = "x[deg];y[deg];z[deg];timestamp[ms]";
+	
+	for (int i = 0; i < maxTableRows.Length; i++)
+	{
+		string fileName;
+		if (textBox_context.Text != "") fileName = textBox_context.Text + "_" + i + ".txt";
+		else fileName = "noname_" + i + ".txt";
+		
+		using (StreamWriter writer = new StreamWriter(FILE_SAVE_PATH + fileName, false)) writer.WriteLine(header);
+		saveDbToFile(i, maxTableRows, fileName);
+	}
+}
+...
+private void backgroundWorker_saveDbToTxt_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+{
+	helperFunctions.changeElementEnable(button_exportToTxt, true);
+    helperFunctions.changeElementEnable(button_recordToDb, true);
+    helperFunctions.changeElementEnable(button_importToDb, true);
+}
+\end{lstlisting}

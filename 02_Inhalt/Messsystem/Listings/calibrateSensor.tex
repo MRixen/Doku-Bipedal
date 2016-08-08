@@ -1,0 +1,55 @@
+\label{lst:calibrateSensor}
+\begin{lstlisting}[language=Java, caption=Sensoren kalibrieren]
+private void button_calibrateSensors(object sender, EventArgs e)
+{
+	for (int i = 0; i < SENSOR_AMOUNT; i++)
+	{
+		gs_x[i] = 0; gs_y[i] = 0; gs_z[i] = 0;
+		sensorCalibrationSet[i] = false;
+	}
+	buttonCalibrateSensors.Enabled = false;
+}
+...
+private void tcpMsgRecEvent(string[] receivedMessage)
+{
+	...
+	if (sensor_joint_ID <= SENSOR_AMOUNT)
+	{
+		if ((!sensorCalibrationSet[sensor_joint_ID]) & (!buttonCalibrateSensors.Enabled))
+		{
+			double alpha = -9999;
+			if ((sensorValues[1] >= 0) & (sensorValues[2] < 0)) alpha = -(Math.PI / 2) + Math.Acos((sensorValues[1] * GRAVITATION_EARTH) / GRAVITATION_EARTH);
+			else if ((sensorValues[1] >= 0) & (sensorValues[2] > 0)) alpha = (Math.PI / 2) - Math.Acos((sensorValues[1] * GRAVITATION_EARTH) / GRAVITATION_EARTH);
+			
+			if (alpha != -9999)
+			{
+				Rx_x[0] = 1;
+				Rx_x[1] = 0;
+				Rx_x[2] = 0;
+				
+				Rx_y[0] = 0;
+				Rx_y[1] = Math.Cos(alpha);
+				Rx_y[2] = -Math.Sin(alpha);
+				
+				Rx_z[0] = 0;
+				Rx_z[1] = Math.Sin(alpha);
+				Rx_z[2] = Math.Cos(alpha);
+
+				sensorCalibrationSet[sensor_joint_ID] = true;
+				
+				for (int i = 0; i < SENSOR_AMOUNT; i++)
+				{
+					if (!sensorCalibrationSet[i]) break;
+					else if (i == SENSOR_AMOUNT - 1) helperFunctions.changeElementEnable(buttonCalibrateSensors, true);
+				}			
+			}
+			else
+			{
+				helperFunctions.changeElementText(textBox_Info, "Calibration failed!", true);
+				helperFunctions.changeElementEnable(buttonCalibrateSensors, true);
+			}
+		}
+	}
+	...
+}
+\end{lstlisting}

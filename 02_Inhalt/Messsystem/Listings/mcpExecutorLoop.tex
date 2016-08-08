@@ -1,0 +1,57 @@
+\label{lst:mcpExecutorLoop}
+\begin{lstlisting}[language=Java, caption=Loop Routine]
+void loop()
+{
+	getAdxlData();
+	
+	for (size_t i = 0; i < MESSAGE_SIZE_ADXL; i++) mcp2515_load_tx_buffer(ReadBuf[i], i, MESSAGE_SIZE_ADXL);
+}
+...
+bool getAdxlData() {
+
+	byte RegAddrBuf[] = { REGISTER_ACCEL_REG_X | REGISTER_ACCEL_SPI_RW_BIT | REGISTER_ACCEL_SPI_MB_BIT };
+	
+	setCsPin(CS_PIN_ADXL, LOW);
+	SPI.transfer(RegAddrBuf[0]);
+	for (int i = 0; i < 6; i++) ReadBuf[i] = SPI.transfer(0x00); 
+	setCsPin(CS_PIN_ADXL, HIGH);
+	
+	ReadBuf[6] = EXECUTOR_ID;
+	
+	return true;
+}
+...
+void mcp2515_load_tx_buffer(byte messageData, int byteNumber, int messageSize) {
+	byte registerAddress;
+	
+	if (currentTxBuffer[0])
+	{
+	registerAddress = REGISTER_TXB0Dx[byteNumber];
+	if (byteNumber == (messageSize-1))
+	{
+	currentTxBuffer[0] = false;
+	currentTxBuffer[1] = true;
+	}
+	}
+	else if (currentTxBuffer[1]) {
+	registerAddress = REGISTER_TXB1Dx[byteNumber];
+	if (byteNumber == (messageSize - 1))
+	{
+	currentTxBuffer[1] = false;
+	currentTxBuffer[2] = true;
+	}
+	}
+	else if (currentTxBuffer[2]) {
+	registerAddress = REGISTER_TXB2Dx[byteNumber];
+	if (byteNumber == (messageSize - 1))
+	{
+	currentTxBuffer[2] = false;
+	currentTxBuffer[0] = true;
+	}
+	}
+	
+	mcp2515_execute_write_command(registerAddress, messageData, CS_PIN_MCP2515);
+	
+	for (int i = 0; i < 3; i++) if(currentTxBuffer[i] == true) mcp2515_execute_rts_command(i);	
+}
+\end{lstlisting}

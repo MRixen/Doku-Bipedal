@@ -1,0 +1,34 @@
+In der folgend dargestellten Tabelle sind die derzeit vorhandenen Bugs der Software \textit{NAME} aufgelistet. Dabei wird, neben einer Beschreibung des Fehlers, der Kontext genannt, in dem das Auftreten erfolgt und ein Indikator aufgezeigt, der die Bedeutung des Fehlers wiedergibt.\\
+Die Farben des Indikators sind definiert mit:
+\begin{table}[H]
+\centering
+\begin{tabular}{ll}
+\textcolor{red}{Rot:} & Stark \\ 
+\textcolor{yellow}{Gelb:} & Mittel \\ 
+\textcolor{green}{Grün:} & Schwach \\ 
+\end{tabular} 
+\end{table}
+
+\begin{table}[H]
+\caption{Liste von bekannten Bugs der Software NAME HMI}\label{app:BugListe}
+\renewcommand{\arraystretch}{1.5} 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\centering
+\begin{tabular}{|p{4.5cm}|p{3cm}|C{6cm}|}
+ 	\hline 
+    \rowcolor{hellgrau} \textbf{Fehlerbeschreibung} & \textbf{Kontext} & \textbf{Sicherheitsbeeinträchtigung}\\
+    \hline
+    Fehlerbeschreibung & Kontext & \redDot{-0.4} \\
+    \hline
+    Fehlerbeschreibung & Kontext & \redDot{-1.3} \\
+    \hline
+    Fehlerbeschreibung & Kontext & \greenDot{-0.6} \\
+    \hline
+    Fehlerbeschreibung & Kontext & \yellowDot{-1.2} \\
+    \hline
+    Fehlerbeschreibung & Kontext & \greenDot{-1.2} \\
+    \hline
+    Fehlerbeschreibung & Kontext & \greenDot{-1.2} \\
+    \hline
+\end{tabular} 
+\end{table}
