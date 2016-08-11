@@ -1,16 +1,25 @@
-\subsection{Ansteuerung}
+\section{Ansteuerung}
 \label{kap:Ansteuerung}
-% Wie ist das System aufgebaut?
-% - Grafisch ZusammenhÃ¤nge aufzeigen
+Der Aufbau des Gesamtsystem und dessen Funktionsweise ist in Abbildung XXX prinzipiell dargestellt.
 
-\subsubsection{Protokoll}
-% Sequentielle BlockÃ¼bertragung fÃ¼r max 8 Motoren
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.0\linewidth]{03_Grafiken/Robotersystem/Aufbau}
+\caption[Ansteuerung / Aufbau (Prinzip)]{Ansteuerung / Aufbau (Prinzip)}
+\label{fig:aufbau}
+\end{figure}
 
-\subsubsection{Testprogramm}
+Dabei ist zunächst das mechanische Modell vernachlässigbar, da dieses im weiteren Verlauf Erläuterung findet. Zunächst wird die softwaretechnische Seite betrachtet und dessen elektronischen Komponenten, die zur Ansteuerung des Gesamtsystems genutzt werden, erläutert.\\
+Diesbezüglich befindet sich im oberen linken Teil der GRafik die Konstellation der beteiligten Baugruppen und deren Verknüpfung zueinander. Der Raspberry Pi 2 dient als Steuerzentrale, auf dem das \gls{BS} Windows 10 IOT installiert ist. Darauf ist eine Software aktiv, mit der die gesamte Reglung des Systems abgearbeitet wird. Entsprechend erfolgt das Senden von Befehlen (zur Ansteuerung der Motoren) vom Raspberry Pi aus über eine USB-Schnittstelle hin zum OpenCM Board. Dieses Board liest die Befehle und gibt diese an die Motoren (Dynamixel AX-12) weiter. Das Expansion Board ist notwendig, da das OpenCM-Board keine TTL-Schnittstelle zur Verfügung stellt.\\
+Der eigentlich Clou des Systems besteht darin, dass beim Neustart (sofern notwendig) die Bewegungssätze von einer externen Datenbank heruntergeladen werden. Diesbezüglich verfügt der Raspberry Pi über eine Wlan, bzw. UMTS-Schnittstelle. Die SQL-Datenbank ist über das Internet erreichbar, sodass stets aktuelle Bewegungssätze zur Verfügung stehen. Die BEwegungssätze werden mit dem, in Kapitel \ref{kap:Messsystem} beschriebenen Messsystem erstellt / erweitert.
+\subsection{Protokoll}
+% Sequentielle Blockübertragung für max 8 Motoren
+
+\subsection{Testprogramm}
 % WriteToComPort
 
-\subsubsection{Kontrollprogramm}
+\subsection{Kontrollprogramm}
 % MovementControl
 
-\subsubsection{Clientprogramm}
+\subsection{Clientprogramm}
 % Programm auf dem OpenCM

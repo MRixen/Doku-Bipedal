@@ -23,11 +23,12 @@ Die Elemente werden dabei mit der in der HMI angegebenen Bezeichnung beschrieben
 	%
 	% Import extracted steps
 	%
-	\item \textbf{Import extracted steps to db}\\
-	Pseudotext\\
-	!!! TODO: VALIDATE CODE AND WRITE DESCRIPTION !!! \\
-	% Filename muss folgendes Format aufweisen, sonst wird es nicht eingelesen: table_x.txt -> x steht für eine Zahl zwischen 0 und ? (Datenbankgröße)
-	\input{02_Inhalt/Messsystem/Listings/importSteps}
+	\item \textbf{Upload steps}\\
+	Zunächst muss in das Textfeld \textit{db name} die Bezeichnung der Tabelle eingegeben werden, in die etwas importiert werden soll (Tabellenname in der externen SQL-Datenbank - s. Beschreibung Kapitel \ref{kap:DatabaseLayout}).
+	Durch das Betätigen des Buttons erscheint dann ein Dialog, in dem der Bediener eine CSV-Datei (ohne Überschrift) auswählen muss. Diese Textdatei muss folgendes Format des Dateinamens aufweisen: tableX.txt (X steht für die Zahl des Sensors, z.B. 0, 1, 2, etc.).\\
+	Anschließend erfolgt das Hochladen in eine externe SQL-Datenbank.
+	In einer späteren Version wird es nur noch einen Button geben, mit dem die Schrittfolge automatisch extrahiert und in die externe Datenban k hochgeladen wird.
+	\input{02_Inhalt/Messsystem/Listings/uploadSteps}
 	%
 	% Calibrate Sensors
 	%
@@ -55,7 +56,7 @@ Die Elemente werden dabei mit der in der HMI angegebenen Bezeichnung beschrieben
 	% Show database
 	%
 	\item \textbf{Show database}\\
-	Das Darstellen der Datenbank, indem sich die aufgezeichneten Messwerte befinden, erfolgt durch das Setzen der entsprechenden Checkbox. Das Prüfen, ob die Checkbox gesetzt ist erfolgt inerhalb der verbundenen Event-Routine (s. Listing \ref{lst:showDb} Zeile 7). Entsprechend der gesetzten Datenbank-ID wird die Datenbank ausgewählt und eine Liste mit dessen Inhalt erzeugt (s. Zeile 21) und dargestellt (s. Zeile 22).
+	Das Darstellen der Datenbank, indem sich die aufgezeichneten Messwerte befinden, erfolgt durch das Setzen der entsprechenden Checkbox. Das Prüfen, ob die Checkbox gesetzt ist erfolgt inerhalb der verbundenen Event-Routine (s. Listing \ref{lst:showDb} Zeile 4). Entsprechend der Datenbank-ID wird die Datenbank ausgewählt und eine Liste mit dessen Inhalt erzeugt (s. Zeile 6) und dargestellt (s. Zeile 7).
 	\input{02_Inhalt/Messsystem/Listings/showDb}
 \end{enumerate}
 

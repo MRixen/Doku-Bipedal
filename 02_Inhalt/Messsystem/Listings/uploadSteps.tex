@@ -1,0 +1,36 @@
+\label{lst:uploadSteps}
+\begin{lstlisting}[language=Java, caption=Schrittfolge auslagern]
+private void button_uploadSteps_Click(object sender, EventArgs e)
+{
+	...	
+	try
+	{
+		fileId = Int32.Parse(fileName[0]);
+		db_name = textBox_dbTableName.Text;
+	}
+	...
+	finally
+	{
+		if (((fileId >= MIN_TABLE_AMOUNT) && (fileId <= MAX_TABLE_AMOUNT)) && (db_name.Length != 0)) backgroundWorker_loadTxtToDb.RunWorkerAsync();
+		else helperFunctions.changeElementText(textBox_Info, "Wrong file id or db name", true);
+	}
+}
+private void backgroundWorker_loadTxtToDb_DoWork(object sender, DoWorkEventArgs e)
+{
+	...
+	xampp_removeContent(db_name, fileId);
+	using (StreamReader reader = new StreamReader(directoryTxtImport))
+	{
+		while (!reader.EndOfStream)
+		{
+			returnString = reader.ReadLine();
+			String[] messageData = returnString.Split(';');
+			Decimal[] messageDataAsDecimal = new Decimal[messageData.Length];
+			
+			for (int j = 0; j < 4; j++) messageDataAsDecimal[j] = Decimal.Parse(messageData[j], CultureInfo.InvariantCulture.NumberFormat);
+			if (readCounter > 0) xampp_addContent(db_name, fileId, messageDataAsDecimal);
+			...
+		}
+	}
+}
+\end{lstlisting}
