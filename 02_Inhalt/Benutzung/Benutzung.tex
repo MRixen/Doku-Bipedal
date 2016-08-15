@@ -1,0 +1,14 @@
+\chapter{Anwendung}
+\label{kap:Anwendung}
+Das System liegt in der \textbf{Version 1.0.0} vor. Das bedeutet, es wurde getestet und kann, wie unten beschrieben, verwendet werden. Fehler sind nicht ausgeschlossen und müssen dokumentiert und anschließend behoben werden. Des Weiteren erfolgt das kontinuierliche Verbessern der Soft- und ggf. Hardware hin zu einer neuen Version.
+
+Um einen neuen Datensatz für eine Bewegung aufzuzeichnen, muss wie folgt vorgegangen werden:
+\begin{enumerate}
+	\item Mess-Anzug ankleiden und das technische Equipment, gemäß Abbildung XXX, anlegen und miteinander verbinden (Raspberry Pi zuletzt anschließen!).
+	\item Software ClientGraph\_MovementDiagnose starten, Samples angeben und Button Record to db betätigen
+	\item Messwerte exportieren und in Excel als CSV-Datei (Semikolon-Delimited) importieren
+	\item Schrittfolge extrahieren (max. 65535 ms) und als CSV-Datei (Tab-Delimited) exportieren
+	\item Trennzeichen Tab (mit Hilfe von Notepad++) durch Zeichen Semikolon ersetzen und ggf. Überschrift entfernen
+	\item Alle Text-Dateien nacheinander mit der Software ClientGraph\_MovementDiagnose in die Cloud laden (Button Upload)
+	\item Robotersystem ausrichten (gemäß Abbildung XXX) und das Programm MovementControl starten
+\end{enumerate}

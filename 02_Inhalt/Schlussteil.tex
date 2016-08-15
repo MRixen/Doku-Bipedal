@@ -2,6 +2,24 @@
 \begin{minipage}{\textwidth}
 \chapter{Zusammenfassung}
 \label{sec:Zusammenfassung}
+Zunächst soll ein Überblick gegeben werden, der die wichtigsten Aspekte des gesamten Systems beschreibt (s. Tabell \ref{tab:AspekteGesamtsystem}).
+
+\begin{center}
+\begin{tabular}{|p{5cm}|p{3cm}|p{3cm}|}
+	\hline 
+	\textbf{Beschreibung} & \textbf{Kontext} & \textbf{Begründung} \\ 
+	\hline 
+	Es können max. 8 Motoren per Zyklus angesprochen werden & Ansteuerung Robotersystem & Probleme Zusammensetzen mehrerer Bytes \\ 
+	\hline 
+	Die Datenbankgröße darf für den Zeitstempel max. 65535 (2 byte) aufweisen & Ansteuerung Robotersystem & Aktuelle Implementierung Protokoll \\ 
+	\hline 
+	Das System lässt nur das aktive Steuern zu. Autonomie ist nicht gegeben. &  Ansteuerung Robotersystem & Funktionsumfang aktueller Version \\ 
+	\hline 
+	&  &  \\ 
+	\hline 
+\end{tabular} 
+\end{center}
+
 Da eine künstliche Intelligenz zu unvorhersehbaren, gefährlichen Situationen führen kann, muss ein, dem Menschen ähnlich dynamisches System, in seiner Freiheit beschränkt werden. Der Begriff Freiheit definiert in diesem Kontext das eigenständige Lernen ohne menschliche Kontrolle. \\
 Ein datenbankbasiertes System besitzt hingegen nur die Fähigkeiten, welche in der Datenbank hinterlegt sind. Dies bringt den Vorteil der Berechenbarkeit mit sich.
 \vspace{2.5cm}

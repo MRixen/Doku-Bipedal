@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.7.2)  11 AUG 2016 14:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.7.2)  14 AUG 2016 18:19
 entering extended mode
 **./Bipedal.tex
 (Bipedal.tex
@@ -630,11 +630,11 @@ Package caption Info: longtable package is loaded.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\ltcaption.sty"
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
-)))
+))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrpage2.sty"
 Package: scrpage2 2016/06/14 v3.21 KOMA-Script package (page head and foot)
 LaTeX Info: Redefining \pagemark on input line 174.
-)
+))
 (01_Vorspann/KopfUndFusszeile.tex) (01_Vorspann/Schriften_und_Symbole.tex
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\lmodern.sty"
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -1481,7 +1481,8 @@ Package csquotes Info: ... found 'babel' package.
  (Bipedal.aux (02_Inhalt/Kurzfassung.aux)
 (Vorlagen.aux) (02_Inhalt/Einleitung.aux) (02_Inhalt/Messsystem/Messsystem.aux)
 (02_Inhalt/Datenbank/Datenbank.aux) (02_Inhalt/Robotersystem/Robotersystem.aux)
-(02_Inhalt/Schlussteil.aux) (02_Inhalt/Anhang.aux))
+(02_Inhalt/Benutzung/Benutzung.aux) (02_Inhalt/Schlussteil.aux)
+(02_Inhalt/Anhang.aux))
 \openout1 = `Bipedal.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 33.
@@ -1501,8 +1502,7 @@ LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 33.
 LaTeX Font Info:    ... okay on input line 33.
 LaTeX Font Info:    Try loading font information for T1+lmr on input line 33.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -1702,7 +1702,7 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 Package hyperref Info: Option `pageanchor' set `false' on input line 36.
 
 (02_Inhalt/Titelseite.tex
-<03_Grafiken/pseudoImage.png, id=167, 1263.72125pt x 584.1825pt>
+<03_Grafiken/pseudoImage.png, id=171, 1263.72125pt x 584.1825pt>
 File: 03_Grafiken/pseudoImage.png Graphic file (type png)
 
 <use 03_Grafiken/pseudoImage.png>
@@ -1936,6 +1936,11 @@ text indent by \l@... (toc, 0):  17.62474pt
 number indent by parent (toc, 0):  0.0pt
 text indent calculated (toc, 0): 13.19998pt
 number indent calculated (toc, 0): 0.0pt
+number indent by \l@... (toc, 0):  0.0pt
+text indent by \l@... (toc, 0):  17.62474pt
+number indent by parent (toc, 0):  0.0pt
+text indent calculated (toc, 0): 13.19998pt
+number indent calculated (toc, 0): 0.0pt
 tocdepth in `appendix': -10000
 tocdepth in `main': 4
 number indent by \l@... (toc, 0):  0.0pt
@@ -2017,7 +2022,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-<03_Grafiken/Messsystem/pseudoImage.png, id=235, 569.0058pt x 333.6465pt>
+<03_Grafiken/Messsystem/pseudoImage.png, id=240, 569.0058pt x 333.6465pt>
 File: 03_Grafiken/Messsystem/pseudoImage.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/pseudoImage.png>
@@ -2031,7 +2036,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Messsystem/Mcp2515EinheitZusammenspiel.png, id=238, 5690.25874pt x
+<03_Grafiken/Messsystem/Mcp2515EinheitZusammenspiel.png, id=243, 5690.25874pt x
  2845.63126pt>
 File: 03_Grafiken/Messsystem/Mcp2515EinheitZusammenspiel.png Graphic file (type
  png)
@@ -2063,7 +2068,7 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 6.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<03_Grafiken/Messsystem/Mcp2515.png, id=246, 1359.0775pt x 943.525pt>
+<03_Grafiken/Messsystem/Mcp2515.png, id=251, 1359.0775pt x 943.525pt>
 File: 03_Grafiken/Messsystem/Mcp2515.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/Mcp2515.png>
@@ -2079,7 +2084,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 18.
  [3 <./03_Grafiken/Messsystem/Mcp2515EinheitZusammenspiel.png>]
-<03_Grafiken/Messsystem/Adxl345.png, id=255, 509.905pt x 352.31625pt>
+<03_Grafiken/Messsystem/Adxl345.png, id=260, 509.905pt x 352.31625pt>
 File: 03_Grafiken/Messsystem/Adxl345.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/Adxl345.png>
@@ -2092,7 +2097,7 @@ Overfull \hbox (5.55595pt too wide) in paragraph at lines 33--37
  de-nen die Atmega328-
  []
 
-<03_Grafiken/Messsystem/Atmega328.png, id=257, 1122.1925pt x 925.4575pt>
+<03_Grafiken/Messsystem/Atmega328.png, id=262, 1122.1925pt x 925.4575pt>
 File: 03_Grafiken/Messsystem/Atmega328.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/Atmega328.png>
@@ -2109,7 +2114,7 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 44.
  [4 <./03_Grafiken/Messsystem/Mcp2515.png> <./03_Grafiken/Messsystem/Adxl345.pn
 g>]
-<03_Grafiken/Messsystem/Oscillator.png, id=265, 1784.6675pt x 1449.415pt>
+<03_Grafiken/Messsystem/Oscillator.png, id=270, 1784.6675pt x 1449.415pt>
 File: 03_Grafiken/Messsystem/Oscillator.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/Oscillator.png>
@@ -2128,7 +2133,7 @@ LaTeX Warning: Reference `fig:SchaltbildEinheit' on page 5 undefined on input l
 ine 3.
 
 
-<03_Grafiken/Messsystem/McpExecutorTest.png, id=266, 2369.85374pt x 1455.4375pt
+<03_Grafiken/Messsystem/McpExecutorTest.png, id=271, 2369.85374pt x 1455.4375pt
 >
 File: 03_Grafiken/Messsystem/McpExecutorTest.png Graphic file (type png)
  <use 03_Grafiken/Messsystem/McpExecutorTest.png>
@@ -2151,7 +2156,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Messsystem/McpExecutor_BetaDetail.png, id=273, 3633.575pt x 1286.8
+<03_Grafiken/Messsystem/McpExecutor_BetaDetail.png, id=278, 3633.575pt x 1286.8
 075pt>
 File: 03_Grafiken/Messsystem/McpExecutor_BetaDetail.png Graphic file (type png)
 
@@ -2160,7 +2165,7 @@ Package pdftex.def Info: 03_Grafiken/Messsystem/McpExecutor_BetaDetail.png used
  on input line 9.
 (pdftex.def)             Requested size: 426.79135pt x 151.13118pt.
 
-<03_Grafiken/Messsystem/McpExecutor2515Klettverschluss.png, id=274, 3011.25pt x
+<03_Grafiken/Messsystem/McpExecutor2515Klettverschluss.png, id=279, 3011.25pt x
  2007.5pt>
 File: 03_Grafiken/Messsystem/McpExecutor2515Klettverschluss.png Graphic file (t
 ype png)
@@ -2338,7 +2343,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Messsystem/ClientGraph_Gui.png, id=393, 356.532pt x 264.38776pt>
+<03_Grafiken/Messsystem/ClientGraph_Gui.png, id=398, 356.532pt x 264.38776pt>
 File: 03_Grafiken/Messsystem/ClientGraph_Gui.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/ClientGraph_Gui.png>
@@ -2369,7 +2374,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Messsystem/ClientGraphDiagramm.png, id=408, 590.80725pt x 532.389p
+<03_Grafiken/Messsystem/ClientGraphDiagramm.png, id=413, 590.80725pt x 532.389p
 t>
 File: 03_Grafiken/Messsystem/ClientGraphDiagramm.png Graphic file (type png)
  <use 03_Grafiken/Messsystem/ClientGraphDiagramm.png>
@@ -2391,7 +2396,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Messsystem/ClientGraphDatabase.png, id=418, 199.34476pt x 355.3275
+<03_Grafiken/Messsystem/ClientGraphDatabase.png, id=423, 199.34476pt x 355.3275
 pt>
 File: 03_Grafiken/Messsystem/ClientGraphDatabase.png Graphic file (type png)
  <use 03_Grafiken/Messsystem/ClientGraphDatabase.png>
@@ -2458,7 +2463,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 35.
  [20]
-<03_Grafiken/Messsystem/Quadranten.png, id=547, 846.16125pt x 492.84125pt>
+<03_Grafiken/Messsystem/Quadranten.png, id=552, 846.16125pt x 492.84125pt>
 File: 03_Grafiken/Messsystem/Quadranten.png Graphic file (type png)
 
 <use 03_Grafiken/Messsystem/Quadranten.png>
@@ -2514,61 +2519,74 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-<03_Grafiken/DatabaseLayout/dblayout.png, id=663, 845.0772pt x 597.432pt>
+<03_Grafiken/DatabaseLayout/dblayout.png, id=668, 845.0772pt x 597.432pt>
 File: 03_Grafiken/DatabaseLayout/dblayout.png Graphic file (type png)
 
 <use 03_Grafiken/DatabaseLayout/dblayout.png>
 Package pdftex.def Info: 03_Grafiken/DatabaseLayout/dblayout.png used on input 
-line 8.
+line 7.
 (pdftex.def)             Requested size: 426.79135pt x 301.72357pt.
-)
+
+<03_Grafiken/DatabaseLayout/CloudContent.png, id=670, 760.2804pt x 711.3777pt>
+File: 03_Grafiken/DatabaseLayout/CloudContent.png Graphic file (type png)
+
+<use 03_Grafiken/DatabaseLayout/CloudContent.png>
+Package pdftex.def Info: 03_Grafiken/DatabaseLayout/CloudContent.png used on in
+put line 16.
+(pdftex.def)             Requested size: 426.79135pt x 399.34572pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 64.
+(babel)             in language  on input line 20.
  [25
 
 
 
- <./03_Grafiken/DatabaseLayout/dblayout.png>]
+ <./03_Grafiken/DatabaseLayout/dblayout.png>])
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 64.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 64.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 64.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 64.
+ [26 <./03_Grafiken/DatabaseLayout/CloudContent.png>]
 \openout2 = `02_Inhalt/Robotersystem/Robotersystem.aux'.
 
- (02_Inhalt/Robotersystem/Robotersystem.tex
+
+(02_Inhalt/Robotersystem/Robotersystem.tex
 chapter 4.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
-
-LaTeX Warning: Reference `kap:Softwarekomponenten' on page 26 undefined on inpu
-t line 5.
-
 (02_Inhalt/Robotersystem/Softwarekomponenten.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
 
-<03_Grafiken/Robotersystem/Aufbau.png, id=670, 597.432pt x 478.1865pt>
+<03_Grafiken/Robotersystem/Aufbau.png, id=685, 597.432pt x 478.1865pt>
 File: 03_Grafiken/Robotersystem/Aufbau.png Graphic file (type png)
 
 <use 03_Grafiken/Robotersystem/Aufbau.png>
 Package pdftex.def Info: 03_Grafiken/Robotersystem/Aufbau.png used on input lin
-e 7.
+e 8.
 (pdftex.def)             Requested size: 426.79135pt x 341.61618pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 11.
+(babel)             in language  on input line 12.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 11.
- [26
+(babel)             in language  on input line 12.
+ [27
 
 
 
@@ -2578,27 +2596,35 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 15.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 15.
- [27 <./03_Grafiken/Robotersystem/Aufbau.png>]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 15.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 15.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 21.
+(babel)             in language  on input line 18.
+ [28 <./03_Grafiken/Robotersystem/Aufbau.png>]
+<03_Grafiken/Robotersystem/Protokoll.png, id=700, 900.36375pt x 447.6725pt>
+File: 03_Grafiken/Robotersystem/Protokoll.png Graphic file (type png)
+
+<use 03_Grafiken/Robotersystem/Protokoll.png>
+Package pdftex.def Info: 03_Grafiken/Robotersystem/Protokoll.png used on input 
+line 21.
+(pdftex.def)             Requested size: 298.75264pt x 148.54526pt.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 24.
+(babel)             in language  on input line 28.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 24.
-) (02_Inhalt/Robotersystem/MechModell.tex
+(babel)             in language  on input line 28.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 31.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 31.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 34.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 34.
+)
+(02_Inhalt/Robotersystem/MechModell.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
@@ -2616,21 +2642,36 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 65.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 65.
- [28]
-\openout2 = `02_Inhalt/Schlussteil.aux'.
+ [29 <./03_Grafiken/Robotersystem/Protokoll.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 65.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 65.
+ [30]
+\openout2 = `02_Inhalt/Benutzung/Benutzung.aux'.
 
-
-(02_Inhalt/Schlussteil.tex
+ (02_Inhalt/Benutzung/Benutzung.tex
 chapter 5.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 3.
-chapter 6.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 8.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 1.
+
+Overfull \hbox (0.39088pt too wide) in paragraph at lines 8--9
+[]\T1/lmr/m/n/12 Software Cli-ent-Graph_MovementDiagnose star-ten, Samp-les an-
+ge-ben und But-
+ []
+
+
+Overfull \hbox (23.42708pt too wide) in paragraph at lines 12--13
+[]\T1/lmr/m/n/12 Alle Text-Dateien nach-ein-an-der mit der Soft-wa-re Cli-ent-G
+raph_MovementDiagnose
+ []
+
 )
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 66.
@@ -2640,7 +2681,83 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 66.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 66.
- [29
+ [31
+
+
+
+]
+\openout2 = `02_Inhalt/Schlussteil.aux'.
+
+ (02_Inhalt/Schlussteil.tex
+chapter 6.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 3.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 3.
+
+LaTeX Warning: Reference `tab:AspekteGesamtsystem' on page 32 undefined on inpu
+t line 5.
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 12--12
+\T1/lmr/m/n/12 ren per Zy-klus an-ge-spro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/lmr/m/n/12 Ansteuerung
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]|\T1/lmr/m/n/12 Probleme Zu-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+\T1/lmr/m/n/12 sam-men-set-zen
+ []
+
+
+Underfull \hbox (badness 3668) in paragraph at lines 14--14
+[]|\T1/lmr/m/n/12 Die Da-ten-bank-grö-ÿe darf
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]|\T1/lmr/m/n/12 Ansteuerung
+ []
+
+
+Underfull \hbox (badness 2096) in paragraph at lines 14--15
+[]|\T1/lmr/m/n/12 Aktuelle Im-ple-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/lmr/m/n/12 Ansteuerung
+ []
+
+
+Overfull \hbox (3.64722pt too wide) in paragraph at lines 16--17
+[]|\T1/lmr/m/n/12 Funktionsumfang
+ []
+
+chapter 7.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 26.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 26.
+)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 67.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 67.
+ [32
 
 
 
@@ -2815,6 +2932,16 @@ text indent by \l@... (lof, 1):  27.02464pt
 number indent by parent (lof, 1):  17.62474pt
 text indent calculated (lof, 1): 26.76385pt
 number indent calculated (lof, 1): 17.62474pt
+number indent by \l@... (lof, 1):  17.62474pt
+text indent by \l@... (lof, 1):  27.02464pt
+number indent by parent (lof, 1):  17.62474pt
+text indent calculated (lof, 1): 26.76385pt
+number indent calculated (lof, 1): 17.62474pt
+number indent by \l@... (lof, 1):  17.62474pt
+text indent by \l@... (lof, 1):  27.02464pt
+number indent by parent (lof, 1):  17.62474pt
+text indent calculated (lof, 1): 26.76385pt
+number indent calculated (lof, 1): 17.62474pt
 )
 \tf@lof=\write9
 \openout9 = `Bipedal.lof'.
@@ -2858,7 +2985,7 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 34.
 (02_Inhalt/Erklaerung.tex
-<03_Grafiken/Anhang/mySignature.jpg, id=747, 95.3964pt x 33.726pt>
+<03_Grafiken/Anhang/mySignature.jpg, id=782, 95.3964pt x 33.726pt>
 File: 03_Grafiken/Anhang/mySignature.jpg Graphic file (type jpg)
 
 <use 03_Grafiken/Anhang/mySignature.jpg>
@@ -2867,38 +2994,39 @@ Package pdftex.def Info: 03_Grafiken/Anhang/mySignature.jpg used on input line
 (pdftex.def)             Requested size: 106.69783pt x 37.72343pt.
 ))
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 70.
+(babel)             in language  on input line 71.
  [6
 
  <./03_Grafiken/Anhang/mySignature.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
  (Bipedal.aux (02_Inhalt/Kurzfassung.aux) (Vorlagen.aux)
 (02_Inhalt/Einleitung.aux) (02_Inhalt/Messsystem/Messsystem.aux)
 (02_Inhalt/Datenbank/Datenbank.aux) (02_Inhalt/Robotersystem/Robotersystem.aux)
-(02_Inhalt/Schlussteil.aux) (02_Inhalt/Anhang.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
+(02_Inhalt/Benutzung/Benutzung.aux) (02_Inhalt/Schlussteil.aux)
+(02_Inhalt/Anhang.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 75.
 \openout2 = `Bipedal.toc1'.
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 74.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 75.
 Package rerunfilecheck Info: File `Bipedal.out' has not changed.
-(rerunfilecheck)             Checksum: 26C2B59589984478255A2A6DF516374D;2796.
+(rerunfilecheck)             Checksum: A5955BF21E2028FB1C1CA89845015ACF;2844.
 
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 33144 strings out of 493334
- 606675 string characters out of 3139232
- 939535 words of memory out of 3000000
- 35472 multiletter control sequences out of 15000+200000
+ 33188 strings out of 493334
+ 607700 string characters out of 3139232
+ 940485 words of memory out of 3000000
+ 35493 multiletter control sequences out of 15000+200000
  87129 words of font info for 71 fonts, out of 3000000 for 9000
  1171 hyphenation exceptions out of 8191
  60i,13n,82p,10416b,2649s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2911,20 +3039,22 @@ laced by a fixed one
 pdfTeX warning (dest): name{glo:MCU} has been referenced but does not exist, re
 placed by a fixed one
 
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program Files/MiK
-TeX 2.9/fonts/enc/dvips/fontname/8r.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/
-dvips/lm/lm-ts1.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/la
-txfont/lcircle1.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/
-lmro12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmss10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/urw/courier/ucrr8a.pfb>
-Output written on Bipedal.pdf (39 pages, 23394503 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-rm.enc}{C:/Program Files/MiK
+TeX 2.9/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc
+/dvips/lm/lm-ec.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.en
+c}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.enc}<C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/lm/lmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/l
+mr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmr6.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/lm/lmri12.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/public/lm/lmro12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/lm/lmss10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/lm/lmssbx10.p
+fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrb8a.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on Bipedal.pdf (42 pages, 23952583 bytes).
 PDF statistics:
- 873 PDF objects out of 1000 (max. 8388607)
- 388 named destinations out of 1000 (max. 500000)
- 414 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 917 PDF objects out of 1000 (max. 8388607)
+ 401 named destinations out of 1000 (max. 500000)
+ 432 words of extra memory for PDF output out of 10000 (max. 10000000)
 

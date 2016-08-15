@@ -1,6 +1,7 @@
 \section{Ansteuerung}
 \label{kap:Ansteuerung}
-Der Aufbau des Gesamtsystem und dessen Funktionsweise ist in Abbildung XXX prinzipiell dargestellt.
+Der Aufbau des Gesamtsystem und dessen Funktionsweise ist in Abbildung \ref{fig:aufbau} prinzipiell dargestellt.
+Dabei ist zunächst das mechanische Modell vernachlässigbar, da dieses im weiteren Verlauf Erläuterung findet. Zunächst wird die softwaretechnische Seite betrachtet und dessen elektronischen Komponenten, die zur Ansteuerung des Gesamtsystems genutzt werden, erläutert.
 
 \begin{figure}[H]
 \centering
@@ -9,11 +10,20 @@ Der Aufbau des Gesamtsystem und dessen Funktionsweise ist in Abbildung XXX prinz
 \label{fig:aufbau}
 \end{figure}
 
-Dabei ist zunächst das mechanische Modell vernachlässigbar, da dieses im weiteren Verlauf Erläuterung findet. Zunächst wird die softwaretechnische Seite betrachtet und dessen elektronischen Komponenten, die zur Ansteuerung des Gesamtsystems genutzt werden, erläutert.\\
-Diesbezüglich befindet sich im oberen linken Teil der GRafik die Konstellation der beteiligten Baugruppen und deren Verknüpfung zueinander. Der Raspberry Pi 2 dient als Steuerzentrale, auf dem das \gls{BS} Windows 10 IOT installiert ist. Darauf ist eine Software aktiv, mit der die gesamte Reglung des Systems abgearbeitet wird. Entsprechend erfolgt das Senden von Befehlen (zur Ansteuerung der Motoren) vom Raspberry Pi aus über eine USB-Schnittstelle hin zum OpenCM Board. Dieses Board liest die Befehle und gibt diese an die Motoren (Dynamixel AX-12) weiter. Das Expansion Board ist notwendig, da das OpenCM-Board keine TTL-Schnittstelle zur Verfügung stellt.\\
-Der eigentlich Clou des Systems besteht darin, dass beim Neustart (sofern notwendig) die Bewegungssätze von einer externen Datenbank heruntergeladen werden. Diesbezüglich verfügt der Raspberry Pi über eine Wlan, bzw. UMTS-Schnittstelle. Die SQL-Datenbank ist über das Internet erreichbar, sodass stets aktuelle Bewegungssätze zur Verfügung stehen. Die BEwegungssätze werden mit dem, in Kapitel \ref{kap:Messsystem} beschriebenen Messsystem erstellt / erweitert.
+Diesbezüglich befindet sich im oberen linken Teil der Grafik die Konstellation der beteiligten Baugruppen und deren Verknüpfung zueinander. Der Raspberry Pi 2 dient als Steuerzentrale, auf dem das \gls{BS} Windows 10 IOT installiert ist. Darauf ist eine Software aktiv, mit der die gesamte Reglung des Systems abgearbeitet wird. Entsprechend erfolgt das Senden von Befehlen (zur Ansteuerung der Motoren) vom Raspberry Pi aus über eine USB-Schnittstelle hin zum OpenCM Board. Dieses Board liest die Befehle und gibt diese an die Motoren (Dynamixel AX-12) weiter. Das Expansion Board ist notwendig, da das OpenCM-Board keine TTL-Schnittstelle zur Verfügung stellt.\\
+Der eigentlich Clou des Systems besteht darin, dass beim Neustart (sofern notwendig) die Bewegungssätze von einer externen Datenbank heruntergeladen werden. Diesbezüglich verfügt der Raspberry Pi über eine Wlan, bzw. UMTS-Schnittstelle. Die SQL-Datenbank ist über das Internet erreichbar, sodass stets aktuelle Bewegungssätze zur Verfügung stehen. Die Bewegungssätze werden mit dem, in Kapitel \ref{kap:Messsystem} beschriebenen Messsystem erstellt / erweitert.
 \subsection{Protokoll}
-% Sequentielle Blockübertragung für max 8 Motoren
+\label{kap:Protokoll}
+Sobald auf dem Raspberry Pi die gesamten Bewegungssätze zur Verfügung stehen, beginnt der Kontrollalgorithmus und navigiert den Roboter, entsprechend der Eingangsgrößen (visuell, haptisch, etc.). Dazu kommt ein Übertragungsprotkoll zum Tragen, welches (in der aktuellen Version) das Ansteuern von 8 Motoren gleichzeitig zulässt. Das Protokoll (s. Abbildung \ref{fig:protokoll}) darf 64 byte nicht überschreiten, da dies die maximale Menge ist, die per Sequenz über die USB-Schnittstelle des OpenCM-Boards übertragen werden kann. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\linewidth]{03_Grafiken/Robotersystem/Protokoll}
+\caption[Übertragungsprotkoll]{Übertragungsprotkoll}
+\label{fig:protokoll}
+\end{figure}
+
+Die Übertragung der Stellgrößen, für acht Motoren per Zyklus, erfolgt blockweise mit einer Blockgröße von 2 byte. In der obigen Grafik ist der Inhalt jedes Blocks dargestellt. Beginnend mit der Startsequenz (Dezimalwert: 9999), folgen die IDs der Motoren (bitweise: ...0000 0001, jedes Bit repräsentiert einen Motor: 1 aktiv, 0 inaktiv). Insgesamt können 14 Motoren per Sequenz angesprochen werden. Nach dem Block der IDs folgt die Geschwindigkeit mit der die Positionen angefahren werden sollen. Diese sind nacheinander für jeden Motor mit jeweils 2 byte definiert (14 Motoren a 2 byte = 28 byte). Nach den Geschwindigkeiten sind die Blöcke für die Positionen angeordnet. Diese sind ebenfalls für jede Position nacheinander mit jeweils 2 byte definiert. Das Ende einer Nachricht wird mit der Endsequenz angegeben (Dezimal: 8888);
 
 \subsection{Testprogramm}
 % WriteToComPort
