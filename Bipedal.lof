@@ -10,18 +10,24 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Atmega328}}{5}{figure.caption.8}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Oscillator}}{5}{figure.caption.9}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Testversion einer Mcp-Executor-Einheit}}{6}{figure.caption.10}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Betaversion einer Mcp-Executor-Einheit}}{6}{figure.caption.11}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Betaversion einer Mcp-Executor-Einheit - Klettverschluss}}{7}{figure.caption.12}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Client Graph HMI}}{14}{figure.caption.13}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Diagramm Sensorwerte}}{16}{figure.caption.14}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Datenbank mit Sensorwerten}}{17}{figure.caption.15}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Zul\"assige Quadranten}}{21}{figure.caption.16}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Schaltbild Mcp-Executor Einheit}}{6}{figure.caption.11}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Betaversion einer Mcp-Executor-Einheit}}{7}{figure.caption.12}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Betaversion einer Mcp-Executor-Einheit - Klettverschluss}}{7}{figure.caption.13}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Release-Version der Mcp-Executor-Einheit}}{8}{figure.caption.15}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Raspberry Pi 2}}{10}{figure.caption.17}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Wlan Adapter}}{10}{figure.caption.18}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Akku Anker}}{11}{figure.caption.19}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Client Graph HMI}}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Diagramm Sensorwerte}}{16}{figure.caption.21}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Datenbank mit Sensorwerten}}{17}{figure.caption.22}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces Zul\"assige Quadranten}}{21}{figure.caption.23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Layout der Datenbanken}}{25}{figure.caption.17}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Struktur der externen Cloud}}{26}{figure.caption.18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Layout der Datenbanken}}{25}{figure.caption.24}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Struktur der externen Cloud}}{26}{figure.caption.25}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Ansteuerung / Aufbau (Prinzip)}}{28}{figure.caption.19}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces \"Ubertragungsprotkoll}}{29}{figure.caption.20}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Ansteuerung / Aufbau (Prinzip)}}{28}{figure.caption.26}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration der Smooth-Zone}}{29}{figure.caption.27}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces \"Ubertragungsprotkoll}}{30}{figure.caption.28}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
